@@ -1,16 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
   const openCartBtn = document.getElementById('openCart');
 
-  // Проверяем наличие Telegram WebApp
+  // Проверяем, доступен ли Telegram WebApp
   if (!window.Telegram || !Telegram.WebApp) {
     console.warn("Telegram WebApp недоступен. Работает не в Telegram.");
     return;
   }
 
-  Telegram.WebApp.ready(); // обязательно!
+  // Активируем Telegram WebApp API
+  Telegram.WebApp.ready();
 
   if (!openCartBtn) {
-    console.error("Кнопка с id='openCart' не найдена");
+    console.error("Кнопка 'openCart' не найдена!");
     return;
   }
 
